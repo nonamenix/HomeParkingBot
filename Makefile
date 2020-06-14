@@ -1,11 +1,9 @@
 PROJECT = HomeParkingBot
 
 PYTHON_VER = python3.6
-PYPY_VER = pypy3.6
 
 REQUIREMENTS = requirements.txt
 VIRTUAL_ENV ?= .venv
-PIP_CONF = pip.conf
 
 PYTHON ?= $(VIRTUAL_ENV)/bin/python
 PYTEST ?= $(VIRTUAL_ENV)/bin/pytest

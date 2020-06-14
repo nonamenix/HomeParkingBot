@@ -5,7 +5,7 @@ import os
 from aiotg import Bot, Chat
 from telegram import ReplyKeyboardMarkup, KeyboardButton
 
-from bot.photo import make_photo
+from photo import make_photo
 
 logging.basicConfig(
     level=getattr(logging, os.environ.get("BOT_LOGGING_LEVEL", "DEBUG")),
@@ -35,6 +35,11 @@ def get_button():
             one_time_keyboard=True,
         ).to_dict()
     )
+
+
+@bot.command("/?ping")
+def ping(chat: Chat, match):
+    return chat.send_text("pong")
 
 
 @bot.command("/start")
